@@ -74,11 +74,13 @@ func (cp *AvCodecParameters) AvCodecGetHeight() int {
 }
 
 func (cp *AvCodecParameters) AvCodecGetChannels() int {
-	return *((*int)(unsafe.Pointer(&cp.channels)))
+	//return *((*int)(unsafe.Pointer(&cp.channels)))
+	return int(cp.channels)
 }
 
 func (cp *AvCodecParameters) AvCodecGetSampleRate() int {
-	return *((*int)(unsafe.Pointer(&cp.sample_rate)))
+	//return *((*int)(unsafe.Pointer(&cp.sample_rate)))
+	return int(cp.sample_rate)
 }
 
 func (c *Codec) AvCodecGetMaxLowres() int {
